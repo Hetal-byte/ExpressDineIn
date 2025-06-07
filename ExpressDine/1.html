@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Express Dine</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000000; 
+            color: #ffffff; /* White text color */
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px; /* Increased max-width for larger content */
+            margin: 100px auto;
+            padding: 20px;
+            background-color: #000000; /* Black background color */
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(255, 255, 255, 0.2); /* Light shadow */
+            position: relative;
+            overflow: hidden;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #ff4500; /* Bright font color for Express Dine In */
+            font-size: 100px; /* Increased font size to 100px */
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        button {
+            padding: 15px 30px; /* Increased padding for larger button */
+            border: none;
+            border-radius: 4px;
+            background-color: #000000; /* Black button color */
+            color: #ff4500; /* Bright font color for "Welcome" */
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            animation: flow 2s infinite linear;
+            font-size: 40px; /* Adjusted font size */
+            transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition */
+        }
+
+        button:hover {
+            background-color: #333333; /* Slightly darker button color on hover */
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Subtle shadow effect on hover */
+        }
+
+        @keyframes flow {
+            0% {
+                box-shadow: 0 0 10px 5px #ffffff; /* White shadow */
+            }
+            50% {
+                box-shadow: 0 0 10px 7px #ffffff; /* White shadow */
+            }
+            100% {
+                box-shadow: 0 0 10px 5px #ffffff; /* White shadow */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Express Dine In</h1>
+        <form id="loginForm" onsubmit="login(event)">
+            
+          <button type="button" onclick="window.location.href = '2.html'">Welcome</button>
+</p>
+        </form>
+    </div>
+
+    <script>
+        function login(event) {
+            event.preventDefault();
+            // Redirect to another page or perform desired action
+            alert("Welcome!");
+        }
+    </script>
+</body>
+</html>

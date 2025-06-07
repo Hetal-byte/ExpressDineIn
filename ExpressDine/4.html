@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Express Dine In</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #000000; /* Black background color */
+            color: #ff4500; /* Bright font color */
+            font-family: 'Arial', sans-serif;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        .restaurant-card {
+            background-color: black; /* Set container background color to black */
+            border: 1px solid white; /* Set white border */
+            margin: 10px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease-in-out;
+            position: relative; /* Add position relative for light flow */
+            overflow: hidden; /* Hide overflow to contain light flow */
+        }
+
+        .restaurant-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+            animation: flow 2s infinite linear;
+            z-index: -1;
+        }
+
+        @keyframes flow {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        .restaurant-card:hover {
+            transform: scale(1.05);
+        }
+
+        .table-layout {
+            background-color: black; /* Set view table container background color to black */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            overflow: hidden; /* Hide overflow to contain light flow */
+        }
+
+        .table-layout::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+            animation: flow 2s infinite linear;
+            z-index: -1;
+        }
+
+        .table-layout h2 {
+            color: #ff4500; /* Set view table header color to bright orange */
+        }
+
+        .table {
+            background-color: black; /* Set table container background color to black */
+            color: #ff4500; /* Set font color to bright orange */
+            border: 1px solid white; /* Set white border */
+            padding: 10px;
+            border-radius: 6px;
+            margin: 5px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .table.available {
+            background-color: #00308F; /* Green for available */
+            color: white;
+        }
+
+        .table.booked {
+            background-color: #F44336; /* Red for booked */
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <div class="restaurant-card">
+            <h2>Restaurant Name 1</h2>
+            <p>Address: 123 Main St</p>
+            <p>Cuisine: Italian</p>
+            <button onclick="showTables('restaurant1')">View Tables</button>
+        </div>
+
+        <div class="restaurant-card">
+            <h2>Restaurant Name 2</h2>
+            <p>Address: 456 Oak St</p>
+            <p>Cuisine: Asian</p>
+            <button onclick="showTables('restaurant2')">View Tables</button>
+        </div>
+
+        <!-- Add more restaurant cards as needed -->
+
+        <div id="restaurant1" class="table-layout" style="display: none;">
+            <!-- Table layout for restaurant1 -->
+            <h2>Tables Available</h2>
+            <!-- Tables will be dynamically generated here -->
+            <div class="table available">Table 1</div>
+            <div class="table available">Table 2</div>
+            <div class="table available">Table 3</div>
+        </div>
+
+        <div id="restaurant2" class="table-layout" style="display: none;">
+            <!-- Table layout for restaurant 2 -->
+            <h2>Tables Available</h2>
+            <!-- Tables will be dynamically generated here -->
+            <div class="table available">Table 1</div>
+            <div class="table available">Table 2</div>
+            <div class="table available">Table 3</div>
+        </div>
+    </main>
+
+    <script>
+        function showTables(restaurantId) {
+            const restaurantDiv = document.getElementById(restaurantId);
+            restaurantDiv.style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>

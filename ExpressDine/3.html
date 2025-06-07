@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXPRESS DINE IN</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000000; /* Black background color */
+            color: #ffffff; /* White text color */
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;   
+            background-color: #000000; /* Black background color */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }   
+
+        h1 {
+            color: #ff4500; /* Bright font color for Express Dine In */
+            font-size: 48px; /* Font size for Express Dine In */
+        }
+
+        button {
+            width: auto;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #ff4500;
+            color: #fff;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #ff6a33;
+        }
+
+        .input-container {
+            text-align: left;
+        }
+
+        input[type="number"],
+        input[type="date"],
+        input[type="time"] {
+            width: calc(33% - 10px); /* Adjusted width for smaller input fields */
+            margin: 10px 5px; /* Adjusted margin for smaller spacing */
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        input[type="number"]:focus,
+        input[type="date"]:focus,
+        input[type="time"]:focus {
+            outline: none;
+        }
+
+        img {
+            height: 200px; /* Increased height of the image */
+            width: 200px; /* Increased width of the image */
+            margin-bottom: 20px; /* Added margin at the bottom */
+            border: 2px solid #ffffff; /* Bright white border */
+            border-radius: 8px; /* Border radius */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="123.jpg">
+        <h1>EXPRESS DINE IN</h1>
+        
+        <form id="bookingForm" onsubmit="openPage()">
+            <div class="input-container">
+                <input type="number" name="members" placeholder="Number of Members" required="">
+                <input type="date" name="bookingDate" required="">
+                <input type="time" name="bookingTime" required="">  
+            </div>
+            <p>
+          <button type="button" onclick="window.location.href = '4.html'">Book Table</button>
+</p>
+        </form>
+    </div>
+
+    <script>
+        function openPage() {
+            setTimeout(function() {
+                window.location.href = "ExpressDineIn2.html";
+            }, 2000); // Redirect after 2 seconds
+        }
+    </script>
+</body>
+</html>

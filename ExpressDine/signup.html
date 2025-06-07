@@ -1,0 +1,114 @@
+Apologies for the oversight! Here's the corrected code with the "First Name" container properly closed:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExpressDineIn</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000000; /* Black background color */
+            color: #ffffff; /* White text color */
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 20px;
+            background-color: #000000; /* Black background color */
+            border-radius: 8px;
+            border: 2px solid #ffffff; /* Bright white border */
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2); /* Light shadow */
+            position: relative;
+            overflow: hidden;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #ff4500; /* Bright font color */
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .input-container {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+            border: 2px solid #ffffff; /* Bright white border */
+            background-color: transparent;
+            color: #ffffff; /* White text color */
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            outline: none;
+        }
+
+        button {
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff; /* Bright button color */
+            color: #ffffff; /* White text color */
+            cursor: pointer;
+            margin: 0 auto; /* Center the button horizontally */
+            display: block; /* Make the button a block element */
+            text-decoration: none; /* Remove underline */
+        }
+
+        button:hover {
+            background-color: #0056b3; /* Darker button color on hover */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Express Dine In</h1>
+        <form id="loginForm" onsubmit="signup(event)">
+            <div class="input-container">
+                <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+            </div>
+            <div class="input-container">
+                <input type="text" id="secondName" name="secondName" placeholder="Second Name" required>
+            </div>
+            <div class="input-container">
+                <input type="text" id="phone" name="phone" placeholder="Phone Number or Google" required>
+            </div>
+            <div class="input-container">
+                <input type="password" id="createPassword" name="createPassword" placeholder="Create Password" required>
+            </div>
+            <button type="button" onclick="window.location.href = '3.html'">Sign Up</button>
+        </form>
+    </div>
+
+    <script>
+        function signup(event) {
+            event.preventDefault();
+            var firstName = document.getElementById("firstName").value;
+            var secondName = document.getElementById("secondName").value;
+            var phone = document.getElementById("phone").value;
+            var createPassword = document.getElementById("createPassword").value;
+            // Perform sign-up process here (for demonstration, let's assume form validation)
+            // You can add custom validation and backend integration here if required
+            alert("Sign-up successful! You can now log in with your credentials.");
+        }
+    </script>
+</body>
+</html>
